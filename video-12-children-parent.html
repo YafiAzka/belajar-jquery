@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <h1>Belajar jquery Traversing basic</h1>
+    <div class="ayam">
+      <h3>Test</h3>
+      <div class="div2">
+        <h3>Halo dik adik</h3>
+        <ul>
+          <li>Ayam</li>
+          <li>Bebek</li>
+          <li id="kocheng">Kocheng</li>
+          <li>Sapi</li>
+          <li>Biawak</li>
+          <div class="">
+            <p>Paragraf Dalam</p>
+            <span>Span dalam</span>
+          </div>
+          <span>Span luar </span>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // $('ul').children().css('color', 'red');
+
+        //Hanya anak pertama
+        // $('ul').children('span').css('color', 'red');
+
+        //Keselurah anak elemen
+        $('ul').find('span').css('color', 'red');
+
+        // Memilih 1 parent diatasnya
+        // $('#kocheng').parent().css('background', 'cyan');
+
+        // Memilih seluruh parent diatasnya
+        // $('#kocheng').parents().css('background', 'pink');
+
+        // Memilih parent sampai elemen yang dipilih
+        $('#kocheng').parentsUntil('.ayam').css('background', 'pink');
+      });
+    </script>
+  </body>
+</html>

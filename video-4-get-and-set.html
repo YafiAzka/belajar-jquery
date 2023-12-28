@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <h1>Belajar jquery Get And Set</h1>
+
+    <form action="">
+      <input type="text" id="inputText" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        // ----- Get and Set ------
+
+        $('form').submit(function () {
+          // alert($('#inputText').val());
+
+          var tulisan = $('#inputText').val();
+
+          $('h1').text(tulisan);
+
+          // Mencegah sifat aslinya atau reload halaman
+
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>

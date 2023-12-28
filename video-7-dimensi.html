@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+
+    <style>
+      .change {
+        color: red;
+      }
+
+      #box-wrap {
+        background-color: beige;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        margin: 1px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Belajar jquery Dimensi</h1>
+
+    <div id="box1">Box 1</div>
+    <br />
+
+    <div id="box-wrap">
+      <div class="boxes">Garis Satu</div>
+      <div class="boxes">Garis Dua</div>
+      <div class="boxes">Garis Tiga</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        //width -> content
+        //var nilai = $('#box-wrap').width();
+
+        //innerWidth -> content + padding
+        //var nilai = $('#box-wrap').innerWidth();
+
+        //outerWidth -> content + border + padding
+        // (true) -> + margin
+        var nilai = $('#box-wrap').outerWidth(true);
+        $('#box1').text(nilai);
+      });
+    </script>
+  </body>
+</html>

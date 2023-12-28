@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+
+    <style>
+      .change {
+        color: red;
+      }
+
+      .boxes {
+        color: green;
+      }
+
+      .box {
+        color: aqua;
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Belajar jquery Css jquery</h1>
+
+    <div id="box1">Box 1</div>
+    <br />
+
+    <div class="boxes">Garis Satu</div>
+    <div class="boxes">Garis Dua</div>
+    <div class="boxes">Garis Dua Koma Lima</div>
+    <div class="boxes">Garis Tiga</div>
+
+    <script>
+      $(document).ready(function () {
+        $('#box1').click(function () {
+          // Gabungan antara add dan remove class (jika ada hapus dan jika tidak ada tambahkan)
+          $('#box1').toggleClass('box');
+        });
+
+        $('h1').click(function () {
+          // Tambahkan class
+          $('h1').addClass('change');
+        });
+
+        $('.boxes').click(function () {
+          //Hapus class
+          $('.boxes').removeClass('boxes');
+        });
+
+        function randomColors() {
+          return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+      });
+    </script>
+  </body>
+</html>

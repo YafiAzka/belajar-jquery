@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <h1>Belajar jquery Siblings</h1>
+
+    <ul>
+      <li>Ayam</li>
+      <li>Bebek</li>
+      <li id="css">Kocheng</li>
+      <li>Sapi</li>
+      <li>Biawak</li>
+      <li>Cicak</li>
+      <li class="komodo">Komodo</li>
+      <li>Galapagos</li>
+    </ul>
+
+    <script>
+      $(document).ready(function () {
+        // Memilih elemen yang satu parent dengan elemen yg dipilih
+        $('#css').siblings().css('fontSize', '20px');
+
+        // Memilih 1 elemen sebelum elemen yang dipilih
+        $('#css').prev().css('color', 'red');
+
+        // Memilih 1 elemen setelah elemen yang dipilih
+        $('#css').next().css('color', 'aqua');
+
+        // Memilih semua elemen setelah elemen yang dipilih
+        $('#css').nextAll().css('backgroundColor', 'gray');
+
+        // Memilih semua elemen sampai elemen yang dipilih
+        $('#css').nextUntil('.komodo').css('backgroundColor', 'magenta');
+      });
+    </script>
+  </body>
+</html>

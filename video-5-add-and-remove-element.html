@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery.js"></script>
+
+    <style>
+      .box-color {
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Belajar jquery Add and Remove Element</h1>
+
+    <form action="">
+      <input type="text" id="inputText" />
+      <input type="submit" />
+    </form>
+
+    <div class="test-remove box-color">
+      <div>Remove akan menghilangkan seluruh elemen</div>
+    </div>
+
+    <div class="test-empty box-color">
+      <div>Empty akan menghilangkan content di dalam elemen</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // ----- Get and Set ------
+
+        $('form').submit(function () {
+          // alert($('#inputText').val());
+
+          var tulisan = $('#inputText').val();
+
+          $('h1').text(tulisan);
+
+          // Mencegah sifat aslinya atau reload halaman
+
+          event.preventDefault();
+        });
+
+        // Menambahkan Dan Menghapus Elemen
+        // Append , Prepend , | After , Before
+
+        $('form').before('<div>Ini before (dimunculkan sebelum tag form)</div><br>');
+        $('form').prepend('<div>Ini prepend (dimunculkan sebelum isi di dalam tag form, tetap di dalam tag form )</div><br>');
+        $('form').append('<div>Ini append (dimunculkan sesudah isi di dalam tag form, tetap di dalam tag form)</div><br>');
+        $('form').after('<div>Ini after (dimunculkan sesudah tag form)</div><br>');
+
+        // Menghapus elemen
+        // Remove dan empty
+
+        $('.test-remove').remove();
+
+        $('.test-empty').empty();
+      });
+    </script>
+  </body>
+</html>

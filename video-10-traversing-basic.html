@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <h1>Belajar jquery Traversing basic</h1>
+
+    <ul>
+      <li>Ayam</li>
+      <li>Bebek</li>
+      <li id="css">Kocheng</li>
+      <li>Sapi</li>
+      <li>Biawak</li>
+    </ul>
+
+    <script>
+      $(document).ready(function () {
+        // Memilih elemen pertama
+        $('li').first().css('color', 'red');
+
+        // Memilih elemen by index
+        $('li').eq(2).css('color', 'gray');
+
+        // Memilih elemen terakhir
+        $('li').last().css('color', 'aqua');
+
+        // Hanya elemen yang dipilih
+        $('li').filter('#css').css('fontSize', '25px');
+
+        // Selain elemen yang dipilih
+        $('li').not('#css').css('background', 'cyan');
+      });
+    </script>
+  </body>
+</html>
